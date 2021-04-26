@@ -80,7 +80,7 @@ static int write_block(FOWasmContext *ctx, FOIntermediate *inm,
 
         fprintf(out->stream, "    %s%s", fn_name, instr->nb_operands > 0 ? " " : "");
         for (int j = 0; j < instr->nb_operands; j++) {
-            fprintf(out->stream, "(local.get %i)%s", instr->operands[i].id,
+            fprintf(out->stream, "(local.get %i)%s", instr->operands[j].id,
                     j != (instr->nb_operands - 1) ? " " : "");
         }
         fprintf(out->stream, "\n");
